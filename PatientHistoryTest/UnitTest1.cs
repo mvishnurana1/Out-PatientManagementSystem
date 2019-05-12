@@ -12,10 +12,7 @@ namespace PatientHistoryTest
         {
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true); 
-            p.AddPatientTransaction(new DateTime(2010, 12, 1, 10, 25, 56), jaundise);
-
-
-
+            p.AddPatientTransaction(new Patient(45236), jaundise);
 
             Assert.AreEqual(p, p); 
         }

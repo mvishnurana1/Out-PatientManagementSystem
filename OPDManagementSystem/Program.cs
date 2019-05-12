@@ -14,10 +14,14 @@ namespace OPDManagementSystem
             var disease = new Disease("bone-fracture", true);
             var historyInstance = new PatientHistory();
 
-            historyInstance.AddPatientTransaction(new DateTime(2012, 12, 10, 12, 45, 03), disease);
+            var p = new Patient(74565, "Tony", "Stark");
+
+            var ip = new InternationalPatient(7456, "Insurance-details-644sdf");
+            
+            historyInstance.AddPatientTransaction(ip, disease); 
+            historyInstance.AddPatientTransaction(p, disease);
 
             historyInstance.GetAllPatientTransactions();
-
             Console.WriteLine(historyInstance.NumberOfTransactions());  
         }
     }

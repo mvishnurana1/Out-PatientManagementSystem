@@ -5,7 +5,7 @@ namespace OPDManagementSystem.Models
 {
     public class PatientHistory
     {
-        private IDictionary<DateTime, Disease> contactInstance = new Dictionary<DateTime, Disease>();
+        private IDictionary<Patient, Disease> contactInstance = new Dictionary<Patient, Disease>();
 
         /// <summary>
         /// The method takes add the patient transaction 
@@ -13,9 +13,9 @@ namespace OPDManagementSystem.Models
         /// </summary>
         /// <param name="date"></param>
         /// <param name="disease"></param>
-        public void AddPatientTransaction(DateTime date, Disease disease)
+        public void AddPatientTransaction(Patient patient, Disease disease)
         {
-            contactInstance.Add(date, disease);
+            contactInstance.Add(patient, disease);
         }
 
         /// <summary>
@@ -23,28 +23,9 @@ namespace OPDManagementSystem.Models
         /// </summary>
         /// <param name="date"></param>
         /// <param name="disease"></param>
-        public void RemovePatientTransaction(DateTime date, Disease disease)
+        public void RemovePatientTransaction(Patient patient)
         {
-            contactInstance.Remove(date);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
-        public Disease GetTransactionInformation(DateTime date)
-        {
-            var disease = new Disease();
-
-            if (contactInstance.TryGetValue(date, out disease))
-            {
-                return (disease);
-            }
-            else
-            {
-                return disease = null;
-            }
+            contactInstance.Remove(patient);
         }
 
         /// <summary>
@@ -53,9 +34,10 @@ namespace OPDManagementSystem.Models
         /// </summary>
         public void GetAllPatientTransactions()
         {
-            foreach (KeyValuePair<DateTime, Disease> item in contactInstance)
+            foreach (KeyValuePair<Patient, Disease> item in contactInstance)
             {
-                Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value.MedicalIssue);
+                Console.WriteLine("Key: {0} {1} {2} Value: {3}", item.Key.PatientID, item.Key.FirstName, 
+                    item.Key.LastName, item.Value.MedicalIssue);
             }
         }
 
