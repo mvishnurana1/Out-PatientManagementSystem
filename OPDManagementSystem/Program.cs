@@ -26,6 +26,8 @@ namespace OPDManagementSystem
 
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());
+
+           // Console.WriteLine(historyInstance.CheckTransactionLog()); 
         }
     }
 }

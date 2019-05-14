@@ -54,5 +54,19 @@ namespace OPDManagementSystem.Models
         {
             return contactInstance.Count; 
         }
+
+        public String CheckTransactionLog(Patient patient, DateTime dateTime, Disease disease)
+        {
+            var key = Tuple.Create(patient, dateTime); 
+
+            if (contactInstance.ContainsKey(key))
+            {
+                return true.ToString(); 
+            }
+            else
+            {
+                return false.ToString(); 
+            }
+        }
     }
 }
