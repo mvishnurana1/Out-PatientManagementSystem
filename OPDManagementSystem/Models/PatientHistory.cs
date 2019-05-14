@@ -20,6 +20,12 @@ namespace OPDManagementSystem.Models
             contactInstance.Add(key, disease);
         }
 
+        /// <summary>
+        /// removes the patient transaction takes
+        /// the key as an argument. 
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <param name="time"></param>
         public void RemovePatientTransaction(Patient patient, DateTime time)
         {
             var key = Tuple.Create(patient, time); 
@@ -40,7 +46,8 @@ namespace OPDManagementSystem.Models
         }
 
         /// <summary>
-        /// 
+        /// Returns the number of transactions 
+        /// patient had with the hospital. 
         /// </summary>
         /// <returns></returns>
         public int NumberOfTransactions()
