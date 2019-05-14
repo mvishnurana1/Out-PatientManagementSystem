@@ -12,9 +12,6 @@ namespace PatientHistoryTest
         {
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true); 
-            p.AddPatientTransaction(new Patient(45236), jaundise);
-
-            Assert.AreEqual(p, p); 
         }
     }
 }

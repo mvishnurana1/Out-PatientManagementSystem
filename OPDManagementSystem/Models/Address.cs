@@ -5,9 +5,19 @@ namespace OPDManagementSystem.Models
     public class Address
     {
         // Constructor chaining 
+        /// <summary>
+        /// default constructor
+        /// </summary>
         public Address() : this(0, "", "", 0)
         { }
 
+        /// <summary>
+        /// constructor over-load-1
+        /// </summary>
+        /// <param name="hNumber"></param>
+        /// <param name="streetName"></param>
+        /// <param name="suburb"></param>
+        /// <param name="postcode"></param>
         public Address(int hNumber, string streetName, string suburb, int postcode)
         {
             HouseNumber = hNumber;
@@ -16,6 +26,14 @@ namespace OPDManagementSystem.Models
             PostCode = postcode;
         }
 
+        /// <summary>
+        /// constructor over-load-2
+        /// </summary>
+        /// <param name="hNumber"></param>
+        /// <param name="streetName"></param>
+        /// <param name="streetName2"></param>
+        /// <param name="suburb"></param>
+        /// <param name="postcode"></param>
         public Address(int hNumber, string streetName, string streetName2, string suburb, int postcode)
         {
             HouseNumber = hNumber;
@@ -25,12 +43,35 @@ namespace OPDManagementSystem.Models
             PostCode = postcode;
         }
 
+        /// <summary>
+        /// Address model of the patient House number. 
+        /// </summary>
         public int HouseNumber { get; set; }
+
+        /// <summary>
+        /// Address model of the patient Street1 
+        /// </summary>
         public string StreetName1 { get; set; }
+
+        /// <summary>
+        /// Optional address field of the address model
+        /// </summary>
         public string StreetName2 { get; set; }
-        public string Suburb { get; set; }
+
+        /// <summary>
+        /// Suburb field of the address 
+        /// </summary>
+        public string Suburb { get; set;}
+
+        /// <summary>
+        /// post-code field of the address. 
+        /// </summary>
         public int PostCode { get; set; }
 
+        /// <summary>
+        /// Returns the address and converts it to string. 
+        /// </summary>
+        /// <returns></returns>
         public string AddressToString()
         {
             if (String.IsNullOrEmpty(StreetName2))

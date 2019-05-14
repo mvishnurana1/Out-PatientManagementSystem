@@ -16,10 +16,7 @@ namespace OPDManagementSystem
 
             var p = new Patient(74565, "Tony", "Stark");
 
-            var ip = new InternationalPatient(7456, "Insurance-details-644sdf");
-            
-            historyInstance.AddPatientTransaction(ip, disease); 
-            historyInstance.AddPatientTransaction(p, disease);
+            historyInstance.AddPatientTransaction(p, new DateTime(2015, 03, 21), disease);
 
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());  

@@ -5,7 +5,8 @@ namespace OPDManagementSystem.Models
 {
     public class PatientHistory
     {
-        private IDictionary<Patient, Disease> contactInstance = new Dictionary<Patient, Disease>();
+        private Dictionary<Tuple<Patient, DateTime>, Disease> contactInstance = 
+            new Dictionary<Tuple<Patient, DateTime>, Disease>();  
 
         /// <summary>
         /// The method takes add the patient transaction 
@@ -13,19 +14,16 @@ namespace OPDManagementSystem.Models
         /// </summary>
         /// <param name="date"></param>
         /// <param name="disease"></param>
-        public void AddPatientTransaction(Patient patient, Disease disease)
+        public void AddPatientTransaction(Patient patient, DateTime time, Disease disease)
         {
-            contactInstance.Add(patient, disease);
+            var key = Tuple.Create(patient, time); 
+            contactInstance.Add(key, disease);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="date"></param>
-        /// <param name="disease"></param>
-        public void RemovePatientTransaction(Patient patient)
+        public void RemovePatientTransaction(Patient patient, DateTime time)
         {
-            contactInstance.Remove(patient);
+            var key = Tuple.Create(patient, time); 
+            contactInstance.Remove(key);
         }
 
         /// <summary>
@@ -34,13 +32,17 @@ namespace OPDManagementSystem.Models
         /// </summary>
         public void GetAllPatientTransactions()
         {
-            foreach (KeyValuePair<Patient, Disease> item in contactInstance)
+            foreach (KeyValuePair<Tuple<Patient, DateTime>, Disease> item in contactInstance)
             {
-                Console.WriteLine("Key: {0} {1} {2} Value: {3}", item.Key.PatientID, item.Key.FirstName, 
-                    item.Key.LastName, item.Value.MedicalIssue);
+                Console.WriteLine("{0} {1}, {2}, {3}", item.Key.Item1.FirstName, item.Key.Item1.LastName, 
+                    item.Key.Item2, item.Value.MedicalIssue);
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int NumberOfTransactions()
         {
             return contactInstance.Count; 
