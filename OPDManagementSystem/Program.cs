@@ -21,7 +21,12 @@ namespace OPDManagementSystem
             historyInstance.AddPatientTransaction(p, new DateTime(2015, 04, 22), disease1);
 
             historyInstance.GetAllPatientTransactions();
-            Console.WriteLine(historyInstance.NumberOfTransactions());  
+            Console.WriteLine(historyInstance.NumberOfTransactions());
+
+            historyInstance.RemovePatientTransaction(p, new DateTime(2015, 03, 21));
+
+            historyInstance.GetAllPatientTransactions();
+            Console.WriteLine(historyInstance.NumberOfTransactions());
         }
     }
 }
