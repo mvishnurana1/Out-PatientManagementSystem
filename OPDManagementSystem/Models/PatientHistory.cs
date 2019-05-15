@@ -55,17 +55,48 @@ namespace OPDManagementSystem.Models
             return contactInstance.Count; 
         }
 
-        public String CheckTransactionLog(Patient patient, DateTime dateTime, Disease disease)
+        /// <summary>
+        /// Function takes the key and evaluates if
+        /// any similar log is contained in the 
+        /// history. 
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public Boolean CheckTransactionLogAvailability(Patient patient, DateTime dateTime)
         {
             var key = Tuple.Create(patient, dateTime); 
 
             if (contactInstance.ContainsKey(key))
             {
-                return true.ToString(); 
+                return true; 
             }
             else
             {
-                return false.ToString(); 
+                return false; 
+            }
+        }
+
+        /**
+         * The functions takes the key and returns the disease 
+         * and everything stored on the log. 
+        */
+        public String ReturnDiseaseLog(Patient patient, DateTime dateTime)
+        {
+            var available = CheckTransactionLogAvailability(patient, dateTime);
+
+            Disease logObject;
+
+            var key = Tuple.Create(patient, dateTime);
+
+            if (!available)
+            {
+                return null; 
+            }
+            else
+            {
+                logObject = contactInstance[key];
+                return logObject.MedicalIssue;
             }
         }
     }

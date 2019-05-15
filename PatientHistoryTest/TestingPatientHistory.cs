@@ -8,7 +8,7 @@ namespace PatientHistoryTest
     public class UnitTestPatientHistory
     {
         [TestMethod]
-        public void TestForNumberOfTransaction()
+        public void TestNumberOfTransaction()
         {
             //Arrange 
             var patient = new Patient(4532, "James", "Smith"); 
@@ -23,7 +23,7 @@ namespace PatientHistoryTest
         }
 
         [TestMethod]
-        public void TestForTransactionsDetail()
+        public void TestTransactionsDetail()
         {
             //Arrange
             var patient = new Patient(4532, "James", "Smith");
@@ -34,12 +34,11 @@ namespace PatientHistoryTest
             p.AddPatientTransaction(patient, new DateTime(2014, 12, 26), jaundise);
 
             //Assert
-            Assert.AreEqual("True", 
-               p.CheckTransactionLog(patient, new DateTime(2014, 12, 26), jaundise)); 
+            Assert.IsTrue(p.CheckTransactionLogAvailability(patient, new DateTime(2014, 12, 26))); 
         }
 
         [TestMethod]
-        public void TestForTransactionsDetailForDateNotMatchDate()
+        public void TestTransactionsDetailForDateNotMatchDate()
         {
             //Arrange
             var patient = new Patient(4532, "James", "Smith");
@@ -50,12 +49,11 @@ namespace PatientHistoryTest
             p.AddPatientTransaction(patient, new DateTime(2014, 12, 26), jaundise);
 
             //Assert
-            Assert.AreEqual("False",
-               p.CheckTransactionLog(patient, new DateTime(2042, 09, 21), jaundise));
+            Assert.IsFalse(p.CheckTransactionLogAvailability(patient, new DateTime(2042, 09, 21)));
         }
 
         [TestMethod]
-        public void TestForTransactionsDetailForDiseaseNotMatchDate()
+        public void TestTransactionsDetailForDiseaseNotMatchDate()
         {
             //Arrange
             var patient = new Patient(4532, "James", "Smith");
@@ -67,8 +65,21 @@ namespace PatientHistoryTest
             p.AddPatientTransaction(patient, new DateTime(2014, 12, 26), jaundise);
 
             //Assert
-            Assert.AreEqual("False",
-               p.CheckTransactionLog(patient, new DateTime(2042, 09, 21), yellowFever));
+            Assert.IsFalse(p.CheckTransactionLogAvailability(patient, new DateTime(2042, 09, 21)));
+        }
+
+        [TestMethod]
+        public void TestTransactionDiseaseLog()
+        {
+            //Arrange 
+            var patient = new Patient(4532, "James", "Smith");
+            var p = new PatientHistory();
+            var jaundise = new Disease("Jaundice", true);
+            
+            // Act 
+
+
+            //Assert 
         }
     }
 }
