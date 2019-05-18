@@ -77,14 +77,16 @@ namespace OPDManagementSystem.Models
             }
         }
 
-        /**
-         * The functions takes the key and returns the disease 
-         * and everything stored on the log. 
-        */
+        /// <summary>
+        /// The functions takes the key and returns 
+        /// the disease  and everything stored on the log.
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
         public String ReturnDiseaseLog(Patient patient, DateTime dateTime)
         {
             var available = CheckTransactionLogAvailability(patient, dateTime);
-
             Disease logObject;
 
             var key = Tuple.Create(patient, dateTime);

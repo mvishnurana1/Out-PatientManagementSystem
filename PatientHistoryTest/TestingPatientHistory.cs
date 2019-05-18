@@ -74,12 +74,13 @@ namespace PatientHistoryTest
             //Arrange 
             var patient = new Patient(4532, "James", "Smith");
             var p = new PatientHistory();
-            var jaundise = new Disease("Jaundice", true);
-            
+            var cancer = new Disease("Cancer", true);
+
             // Act 
+            p.AddPatientTransaction(patient, new DateTime(2015, 12, 26), cancer); 
 
-
-            //Assert 
+            //Assert
+            Assert.AreEqual("Cancer", p.ReturnDiseaseLog(patient, new DateTime(2015, 12, 26))); 
         }
     }
 }
