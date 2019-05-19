@@ -79,7 +79,7 @@ namespace OPDManagementSystem.Models
 
         /// <summary>
         /// The functions takes the key and returns 
-        /// the disease  and everything stored on the log.
+        /// the disease stored on the log.
         /// </summary>
         /// <param name="patient"></param>
         /// <param name="dateTime"></param>
