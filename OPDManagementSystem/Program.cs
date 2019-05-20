@@ -15,6 +15,10 @@ namespace OPDManagementSystem
             var disease1 = new Disease("HIV", true);
             var historyInstance = new PatientHistory();
             var p = new Patient(74565, "Tony", "Stark");
+            var gaurav = new InternationalPatient(54949, "Gaurav", "Rana");
+
+            Console.WriteLine(gaurav.FirstName+","+ gaurav.LastName+", "
+                +gaurav.PatientID+","+gaurav.InsuraceDetail);
 
             historyInstance.AddPatientTransaction(p, new DateTime(2015, 03, 21), disease);
             Console.WriteLine("Disease: " + historyInstance.ReturnDiseaseLog(p, new DateTime(2015, 03, 21)));
