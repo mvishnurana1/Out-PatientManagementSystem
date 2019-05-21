@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OPDManagementSystem.Models
 {
-    public class Patient
+    public abstract class Patient
     {
         public Patient(long id) : this(0, "", "")
         {

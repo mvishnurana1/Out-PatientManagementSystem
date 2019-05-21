@@ -14,7 +14,7 @@ namespace OPDManagementSystem
             var disease = new Disease("Cancer", true);
             var disease1 = new Disease("HIV", true);
             var historyInstance = new PatientHistory();
-            var p = new Patient(74565, "Tony", "Stark");
+            var p = new NationalPatient(74565, "Tony", "Stark");
             var gaurav = new InternationalPatient(54949, "Gaurav", "Rana");
 
             Console.WriteLine(gaurav.FirstName+","+ gaurav.LastName+", "
