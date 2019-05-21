@@ -11,7 +11,7 @@ namespace PatientHistoryTest
         public void TestNumberOfTransaction()
         {
             //Arrange 
-            var patient = new Patient(4532, "James", "Smith"); 
+            var patient = new NationalPatient(4532, "James", "Smith"); 
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true);
 
@@ -26,7 +26,7 @@ namespace PatientHistoryTest
         public void TestTransactionsDetail()
         {
             //Arrange
-            var patient = new Patient(4532, "James", "Smith");
+            var patient = new InternationalPatient(4532, "James", "Smith");
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true);
 
@@ -41,7 +41,7 @@ namespace PatientHistoryTest
         public void TestTransactionsDetailForDateNotMatchDate()
         {
             //Arrange
-            var patient = new Patient(4532, "James", "Smith");
+            var patient = new NationalPatient(4532, "James", "Smith");
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true);
 
@@ -56,7 +56,7 @@ namespace PatientHistoryTest
         public void TestTransactionsDetailForDiseaseNotMatchDate()
         {
             //Arrange
-            var patient = new Patient(4532, "James", "Smith");
+            var patient = new InternationalPatient(4532, "James", "Smith");
             var p = new PatientHistory();
             var jaundise = new Disease("Jaundice", true);
 
@@ -72,7 +72,7 @@ namespace PatientHistoryTest
         public void TestTransactionDiseaseLog()
         {
             //Arrange 
-            var patient = new Patient(4532, "James", "Smith");
+            var patient = new NationalPatient(4532, "James", "Smith");
             var p = new PatientHistory();
             var cancer = new Disease("Cancer", true);
 
