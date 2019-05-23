@@ -108,9 +108,9 @@ namespace OPDManagementSystem.Models
             var patient = contactInstance.FirstOrDefault
                 (x => x.Value == disease).Key; 
 
-            Tuple.Create(patient, date);
-            
+            var key = Tuple.Create(patient, date);
 
+            return key.Item1.Item1; 
         }
     }
 }
