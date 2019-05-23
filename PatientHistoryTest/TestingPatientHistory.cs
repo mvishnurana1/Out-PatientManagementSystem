@@ -96,7 +96,7 @@ namespace PatientHistoryTest
             history.AddPatientTransaction(patient, date, aids);
 
             // Assert 
-            Assert.AreEqual("", history.ReturnPatientDetails(date, aids)); 
+            Assert.AreEqual(25495, history.ReturnPatientDetails(date, aids).PatientID); 
         }
     }
 }
