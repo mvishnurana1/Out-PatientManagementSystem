@@ -24,11 +24,5 @@ namespace OPDManagementSystem.Models
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Address PatientAddress { get; set; }
-        
-        //public String PatientToString()
-        //{
-        //    return 
-        //}
-
     }
 }

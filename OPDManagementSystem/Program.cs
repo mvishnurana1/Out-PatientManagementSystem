@@ -24,7 +24,10 @@ namespace OPDManagementSystem
             Console.WriteLine("Disease: " + historyInstance.ReturnDiseaseLog(p, new DateTime(2015, 03, 21)));
 
             Console.WriteLine("Testing return patient history: "+
-            historyInstance.ReturnPatientDetails(new DateTime(2015, 03, 21), disease));
+            historyInstance.ReturnPatientDetails(new DateTime(2015, 03, 21), disease)
+            .PatientID+", " + historyInstance.ReturnPatientDetails(new DateTime(2015, 03, 21), disease)
+            .FirstName + ", " + historyInstance.ReturnPatientDetails(new DateTime(2015, 03, 21), disease)
+            .LastName);
 
             historyInstance.AddPatientTransaction(p, new DateTime(2015, 04, 22), disease1);
             historyInstance.GetAllPatientTransactions();
