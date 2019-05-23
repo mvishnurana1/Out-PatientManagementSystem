@@ -93,10 +93,10 @@ namespace PatientHistoryTest
             var date = new DateTime(2015, 11, 26);
 
             // Act 
-            history.AddPatientTransaction(patient, date, aids)
+            history.AddPatientTransaction(patient, date, aids);
 
             // Assert 
-            
+            Assert.AreEqual("", history.ReturnPatientDetails(date, aids)); 
         }
     }
 }
