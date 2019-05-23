@@ -84,10 +84,19 @@ namespace PatientHistoryTest
         }
 
         [TestMethod]
-        public void TestPatientCompleteDetail()
+        public void TestPatientOPDDetail()
         {
-            var patient = new InternationalPatient(25495, "James", "Smolder");
-               
+            // Arrange
+            var patient = new InternationalPatient(25495, "James", "Smith");
+            var aids = new Disease("AIDS", false);
+            var history = new PatientHistory();
+            var date = new DateTime(2015, 11, 26);
+
+            // Act 
+            history.AddPatientTransaction(patient, date, aids)
+
+            // Assert 
+            
         }
     }
 }
