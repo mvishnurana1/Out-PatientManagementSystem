@@ -86,7 +86,8 @@ namespace PatientHistoryTest
         [TestMethod]
         public void TestPatientCompleteDetail()
         {
-
+            var patient = new InternationalPatient(25495, "James", "Smolder");
+               
         }
     }
 }

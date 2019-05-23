@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OPDManagementSystem.Models
 {
@@ -100,6 +101,16 @@ namespace OPDManagementSystem.Models
                 logObject = contactInstance[key];
                 return logObject.MedicalIssue;
             }
+        }
+
+        public Patient ReturnPatientDetails(DateTime date, Disease disease)
+        {
+            var patient = contactInstance.FirstOrDefault
+                (x => x.Value == disease).Key; 
+
+            Tuple.Create(patient, date);
+            
+
         }
     }
 }
