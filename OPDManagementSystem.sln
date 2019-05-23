@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPDManagementSystem", "OPDManagementSystem\OPDManagementSystem.csproj", "{CEBD7A99-6715-4BFE-902F-8662E4735EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientHistoryTest", "PatientHistoryTest\PatientHistoryTest.csproj", "{B03C0BAC-A5E0-4E19-86E3-1B323BCDEA15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientModelsTest", "PatientHistoryTest\PatientModelsTest.csproj", "{B03C0BAC-A5E0-4E19-86E3-1B323BCDEA15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
