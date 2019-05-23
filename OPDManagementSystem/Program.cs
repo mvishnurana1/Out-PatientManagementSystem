@@ -23,6 +23,9 @@ namespace OPDManagementSystem
             historyInstance.AddPatientTransaction(p, new DateTime(2015, 03, 21), disease);
             Console.WriteLine("Disease: " + historyInstance.ReturnDiseaseLog(p, new DateTime(2015, 03, 21)));
 
+            Console.WriteLine("Testing return patient history: "+
+            historyInstance.ReturnPatientDetails(new DateTime(2015, 03, 21), disease));
+
             historyInstance.AddPatientTransaction(p, new DateTime(2015, 04, 22), disease1);
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());
@@ -30,6 +33,8 @@ namespace OPDManagementSystem
             historyInstance.RemovePatientTransaction(p, new DateTime(2015, 03, 21));
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());
+
+             
         }
     }
 }
