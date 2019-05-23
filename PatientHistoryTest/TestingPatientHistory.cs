@@ -23,7 +23,7 @@ namespace PatientHistoryTest
         }
 
         [TestMethod]
-        public void TestTransactionsDetail()
+        public void TestTransactionsDate()
         {
             //Arrange
             var patient = new InternationalPatient(4532, "James", "Smith");
@@ -81,6 +81,12 @@ namespace PatientHistoryTest
 
             //Assert
             Assert.AreEqual("Cancer", p.ReturnDiseaseLog(patient, new DateTime(2015, 12, 26))); 
+        }
+
+        [TestMethod]
+        public void TestPatientCompleteDetail()
+        {
+
         }
     }
 }
