@@ -2,6 +2,12 @@
 {
     public class NationalPatient : Patient
     {
+        public NationalPatient()
+        {}
+
+        public NationalPatient(long id) : base(id) 
+        {}
+
         public NationalPatient(long ID, string firstName, string lastName)
             : base(ID, firstName, lastName)
         {}

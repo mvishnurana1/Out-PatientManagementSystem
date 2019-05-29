@@ -7,7 +7,10 @@ namespace OPDManagementSystem.Models
 {
     public abstract class Patient
     {
-        public Patient(long id) : this(0, "", "")
+        public Patient()
+        {}
+
+        public Patient(long id):this(0, "", "")
         {
             PatientID = id; 
         }
@@ -17,6 +20,15 @@ namespace OPDManagementSystem.Models
             PatientID = id; 
             FirstName = fName;
             LastName = lName; 
+        }
+
+        public Patient(long id, string fName, string lName, DateTime dob, Address address)
+        {
+            PatientID = id;
+            FirstName = fName;
+            LastName = lName;
+            DateOfBirth = dob;
+            PatientAddress = address; 
         }
 
         public long PatientID { get;}

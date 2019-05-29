@@ -2,6 +2,9 @@
 {
     public class InternationalPatient : Patient
     {
+        public InternationalPatient()
+        {}
+
         public InternationalPatient(long ID) : base(ID)
         {}
 

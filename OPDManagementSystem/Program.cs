@@ -11,6 +11,7 @@ namespace OPDManagementSystem
     {
         static void Main(string[] args)
         {
+            /*
             var disease = new Disease("Cancer", true);
             var disease1 = new Disease("HIV", true);
             var historyInstance = new PatientHistory();
@@ -36,6 +37,16 @@ namespace OPDManagementSystem
             historyInstance.RemovePatientTransaction(p, new DateTime(2015, 03, 21));
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());
+            */
+
+            var p = new InternationalPatient(561, "dveov", "sdvkoero");
+            Patient pa = new NationalPatient(); 
+
+
+            var pm = new PatientManagement();
+            pm.AddPatient(p);
+
+            Console.WriteLine(pm.GetAllPatients()); 
         }
     }
 }
