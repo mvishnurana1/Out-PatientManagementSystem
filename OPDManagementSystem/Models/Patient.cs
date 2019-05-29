@@ -36,5 +36,12 @@ namespace OPDManagementSystem.Models
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Address PatientAddress { get; set; }
+
+        public string PatientToString()
+        {
+            return this.PatientID + " " + this.FirstName + " " + this.LastName + " " +
+                this.PatientAddress.HouseNumber + " " + this.PatientAddress.StreetName1 + " "
+                + this.PatientAddress.Suburb + " " + this.PatientAddress.PostCode; 
+        }
     }
 }

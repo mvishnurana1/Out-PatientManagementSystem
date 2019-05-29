@@ -84,7 +84,7 @@ namespace PatientHistoryTest
         }
 
         [TestMethod]
-        public void TestPatientOPDDetail()
+        public void TestPatientID_Detail()
         {
             // Arrange
             var patient = new InternationalPatient(25495, "James", "Smith");

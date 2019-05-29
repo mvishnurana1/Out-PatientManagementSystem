@@ -42,11 +42,13 @@ namespace OPDManagementSystem
             var p = new InternationalPatient(561, "dveov", "sdvkoero");
             Patient pa = new NationalPatient(); 
 
-
             var pm = new PatientManagement();
             pm.AddPatient(p);
+            pm.AddPatient(pa); 
 
-            Console.WriteLine(pm.GetAllPatients()); 
+            Console.WriteLine(pm.PatientCount());
+
+            //pm.GetAllPatients();  
         }
     }
 }
