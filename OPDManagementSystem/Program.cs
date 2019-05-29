@@ -36,8 +36,6 @@ namespace OPDManagementSystem
             historyInstance.RemovePatientTransaction(p, new DateTime(2015, 03, 21));
             historyInstance.GetAllPatientTransactions();
             Console.WriteLine(historyInstance.NumberOfTransactions());
-
-             
         }
     }
 }
