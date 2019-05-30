@@ -7,8 +7,7 @@ namespace OPDManagementSystem.Models
 {
     public abstract class Patient
     {
-        public Patient()
-        {}
+        public Patient(){}
 
         public Patient(long id):this(0, "", "")
         {
@@ -28,20 +27,21 @@ namespace OPDManagementSystem.Models
             FirstName = fName;
             LastName = lName;
             DateOfBirth = dob;
-            PatientAddress = address; 
+            GetPatientAddress = address; 
         }
 
         public long PatientID { get;}
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public Address PatientAddress { get; set; }
+        public Address GetPatientAddress { get; set; }
+        public PatientHistory GetHistory { get; set; }
+
 
         public string PatientToString()
         {
-            return this.PatientID + " " + this.FirstName + " " + this.LastName + " " +
-                this.PatientAddress.HouseNumber + " " + this.PatientAddress.StreetName1 + " "
-                + this.PatientAddress.Suburb + " " + this.PatientAddress.PostCode; 
+            return this.PatientID + " " + this.FirstName + " " + this.LastName + " " + this.DateOfBirth 
+                +" "+this.GetPatientAddress.AddressToString();
         }
     }
 }

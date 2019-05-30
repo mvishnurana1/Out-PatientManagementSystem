@@ -47,7 +47,7 @@
     <Compile Include="Models\InternationalPatient.cs" />
     <Compile Include="Models\NationalPatient.cs" />
     <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\PatientHistory.cs" />
+    <Compile Include="PatientHistory.cs" />
     <Compile Include="PatientManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

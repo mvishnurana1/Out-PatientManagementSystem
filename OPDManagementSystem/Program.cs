@@ -40,15 +40,15 @@ namespace OPDManagementSystem
             */
 
             var p = new InternationalPatient(561, "dveov", "sdvkoero");
-            Patient pa = new NationalPatient(); 
+            Patient pa = new NationalPatient();
 
             var pm = new PatientManagement();
             pm.AddPatient(p);
-            pm.AddPatient(pa); 
+            pm.AddPatient(pa);
 
             Console.WriteLine(pm.PatientCount());
 
-            //pm.GetAllPatients();  
+            //pm.GetAllPatients();
         }
     }
 }
