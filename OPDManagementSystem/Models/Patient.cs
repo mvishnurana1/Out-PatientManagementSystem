@@ -30,13 +30,16 @@ namespace OPDManagementSystem.Models
             GetPatientAddress = address; 
         }
 
-        public long PatientID { get;}
+        public long PatientID { get; set; }
+        //todo: protected set
+        //protected long PatientID { set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Address GetPatientAddress { get; set; }
         public PatientHistory GetHistory { get; set; }
 
+        public abstract Patient Clone();
 
         public string PatientToString()
         {

@@ -18,6 +18,19 @@
             InsuraceDetail = detail; 
         }
 
+        override
+        public Patient Clone()
+        {
+            var ret = new InternationalPatient();
+            ret.PatientID = this.PatientID;
+            ret.FirstName = this.FirstName;
+            ret.LastName = this.LastName;
+            ret.DateOfBirth = this.DateOfBirth;
+            ret.GetPatientAddress = this.GetPatientAddress;
+
+            return ret;
+        }
+
         public string InsuraceDetail { get; set; }
     }
 }

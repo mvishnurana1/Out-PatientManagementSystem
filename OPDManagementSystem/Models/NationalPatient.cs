@@ -23,6 +23,20 @@
             MedicareInfo = medicareInfo; 
         }
 
+        override
+        public Patient Clone()
+        {
+            var ret = new NationalPatient();
+
+            ret.PatientID = this.PatientID;
+            ret.FirstName = this.FirstName;
+            ret.LastName = this.LastName;
+            ret.DateOfBirth = this.DateOfBirth;
+            ret.GetPatientAddress = this.GetPatientAddress;
+
+            return ret;
+        }
+
         public string MedicareInfo { get; set; }
     }
 

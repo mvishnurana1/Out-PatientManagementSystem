@@ -19,7 +19,7 @@ namespace OPDManagementSystem
         {
             if(!PatientIsPresent(patient))
             {
-                record.Add(patient);
+                record.Add(patient.Clone());
                 return true; 
             }
             else
