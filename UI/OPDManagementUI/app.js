@@ -32,35 +32,16 @@ UI.prototype.showAlert = function (message, className) {
 }
 
 
-// validating the Name field (only accepting string / not accepting symbols)
-UI.prototype.validateNumberOnlyField = function (argument) {
-    // regular expression to evaluate if an input is NUMBER ONLY. 
-    let regex = /^\d+$/; 
-
-    // if argument matches the pattern return argument --> else, return null.  
-    if(argument.match(regex)) {
-        return (argument);
-    }
-    else {
-        return (null); 
-    }
-}
-
-// validating the ID field (only accepting numbers / not accepting symbols)
-UI.prototype.validateAlphabetOnlyField = function (argument) {
-    console.log(argument); 
-}
-
 // Adding event listener on submit button: 
 document.getElementById('submit').addEventListener('click', function(e){
     // get form values
-    const { id, dob, firstName, middleName, lastName } = GetUIValues();  
+    const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
     
     console.log(id, dob, firstName, middleName, lastName); 
     
     const ui = new UI(); 
 
-    if (id === '' || dob === '' || firstName === '' || lastName === '') {
+    if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
         ui.showAlert('Please fill in all fields', 'error'); 
     } else {
         ui.showAlert('Patient Added to  the database.', 'success'); 
@@ -70,10 +51,9 @@ document.getElementById('submit').addEventListener('click', function(e){
 
         //  display loader image on the UI
         //  Get the container from HTML & display the loader on the page
-        let container = document.getElementsByClassName('container'); 
-        let imgLoader = document.createElement('style')
-            imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
-            
+        // let container = document.getElementsByClassName('container'); 
+        // let imgLoader = document.createElement('style')
+        //     imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
     }
     e.preventDefault(); 
 })
@@ -84,7 +64,8 @@ function GetUIValues() {
     const firstName = document.querySelector('#first-name').value;
     const middleName = document.querySelector('#middle-name').value;
     const lastName = document.querySelector('#last-name').value;
-    return { id, dob, firstName, middleName, lastName };
+    const visaStatus = document.querySelector('#visa-status').value; 
+    return { id, dob, firstName, middleName, lastName, visaStatus };
 }
 
 /**
