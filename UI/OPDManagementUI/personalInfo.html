@@ -57,25 +57,23 @@
             <div class='row'>
                 <div class='six columns'>
                     <label for='State'>State</label>
-                    <input class='u-full-width' id='state' type='text'
-                    placeholder='state'>
-                </div>
-            </div>
-<!-- 
-            <div class="row">
-                <div class="six columns">
-                    <label for="PatientResidencyStatus">Patient Residency Status</label>
-                        <select class="u-full-width" id="visa-status">
+                    <select class="u-full-width" id="states">
                         <option value="null">Please choose one from drop-down menu</option>
-                        <option value="local">Local</option>
-                        <option value="international">International</option>
-                        <option value="NewZealander">Nz Citizen</option>
-                    </select>
+                        <option value="south-australia">South Australia</option>
+                        <option value="new-south-wales">New South Wales</option>
+                        <option value="western-australia">Western Australia</option>
+                        <option value="queensland">Queensland</option>
+                        <option value="victoria">Victoria</option>
+                        <option value="tasmania">Tasmania</option>
                 </div>
             </div>
--->
+
             <button id='submit' class='button-primary'>Submit</button>
         </div>
     </form>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvopphB3fQAoujQR3c1uweR7jz6kdOULo&callback=initMap">
+    </script>
 </body>
 </html>

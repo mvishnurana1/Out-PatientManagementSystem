@@ -55,6 +55,28 @@ document.getElementById('submit').addEventListener('click', function(e){
         let imgLoader = document.createElement('style')
         imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
     }
+    
+// Add an eventlistener for #visa-status to display payment options: 
+document.querySelector('#visa-status').addEventListener('change', function(){
+
+    const ui = new UI(); 
+    // get all form values 
+    const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
+    console.log(id, dob, firstName, middleName, lastName, visaStatus); 
+
+    // If the residency but nothing else is provided --> display error message
+    // and reset the field. 
+    if(id==='', dob==='', firstName==='', middleName==='', lastName==='', visaStatus!=='') {
+        ui.showAlert('Please fill basic fields first!', 'error'); 
+                
+        if(visaStatus === 'local' || visaStatus === 'NewZealander') {
+            
+        } else {
+
+        }
+    }
+})
+
     e.preventDefault(); 
 })
 
@@ -68,23 +90,6 @@ function GetUIValues() {
     return { id, dob, firstName, middleName, lastName, visaStatus };
 }
 
-// Add an eventlistener for #visa-status to display payment options: 
-document.querySelector('#visa-status').addEventListener('change', function(){
-
-    const ui = new UI(); 
-    // get all form values 
-    const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
-    console.log(id, dob, firstName, middleName, lastName, visaStatus); 
-
-    // If the residency but nothing else is provided --> display error message
-    // and reset the field. 
-    if(id==='', dob==='', firstName==='', middleName==='', lastName==='', visaStatus!=='') {
-        ui.showAlert('Please fill basic fields first!', 'error'); 
-        visaStatus.selectedIndex = 0; 
-    }
-})
-
-
 
 /**
  * NavBar JS
@@ -96,4 +101,4 @@ function openDrawerMenu(){
     } else {
       x.className = "navBar";
     }
-  }
+}
