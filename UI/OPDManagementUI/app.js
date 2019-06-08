@@ -8,6 +8,7 @@ UI.prototype.resetFields = function () {
     document.querySelector('#first-name').value = '';
     document.querySelector('#middle-name').value = '';
     document.querySelector('#last-name').value = '';
+    document.querySelector('#visaStatus').value = null; 
 }
 
 // Show alert based on validation. 
@@ -44,6 +45,11 @@ document.getElementById('submit').addEventListener('click', function(e){
     if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
         ui.showAlert('Please fill in all fields', 'error'); 
     } else {
+
+        // Dynamically load Personel info page for User 
+        
+
+        // display alert 
         ui.showAlert('Patient Added to  the database.', 'success'); 
 
         // reset fields
@@ -56,27 +62,6 @@ document.getElementById('submit').addEventListener('click', function(e){
         imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
     }
     
-// Add an eventlistener for #visa-status to display payment options: 
-document.querySelector('#visa-status').addEventListener('change', function(){
-
-    const ui = new UI(); 
-    // get all form values 
-    const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
-    console.log(id, dob, firstName, middleName, lastName, visaStatus); 
-
-    // If the residency but nothing else is provided --> display error message
-    // and reset the field. 
-    if(id==='', dob==='', firstName==='', middleName==='', lastName==='', visaStatus!=='') {
-        ui.showAlert('Please fill basic fields first!', 'error'); 
-                
-        if(visaStatus === 'local' || visaStatus === 'NewZealander') {
-            
-        } else {
-
-        }
-    }
-})
-
     e.preventDefault(); 
 })
 
