@@ -37,7 +37,7 @@ document.getElementById('submit').addEventListener('click', function(e){
     // get form values
     const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
     
-    console.log(id, dob, firstName, middleName, lastName); 
+    console.log(id, dob, firstName, middleName, lastName, visa); 
     
     const ui = new UI(); 
 
@@ -47,13 +47,13 @@ document.getElementById('submit').addEventListener('click', function(e){
         ui.showAlert('Patient Added to  the database.', 'success'); 
 
         // reset fields
-        ui.resetFields(); 
+        // ui.resetFields(); 
 
         //  display loader image on the UI
         //  Get the container from HTML & display the loader on the page
-        // let container = document.getElementsByClassName('container'); 
-        // let imgLoader = document.createElement('style')
-        //     imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
+        let container = document.getElementsByClassName('container'); 
+        let imgLoader = document.createElement('style')
+        imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
     }
     e.preventDefault(); 
 })
