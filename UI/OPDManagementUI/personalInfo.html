@@ -16,9 +16,7 @@
         <a href="searchPatient.html">Search Patient</a>
     </div>
 
-
     <div class='container'>
-
         <div id='page-title'>
             <h3>Add Personel Information</h3>
         </div>
@@ -26,43 +24,44 @@
         <form id='patient-detail-form'>
             <div class='row'>
                 <div class='six columns'>
-                    <label for='PatientID'>Patient ID</label>
-                    <input class='u-full-width' id='patient-Id' type='email'
-                    placeholder='patient ID'>
+                    <label for='patient-house-number'>House\Unit Number</label>
+                    <input class='u-full-width' id='house-number' type='number'
+                    placeholder='House Number'>
                 </div>
             </div>  
             
             <div class='row'>
                 <div class='six columns'>
-                    <label for='date of birth'>Date of Birth</label>
-                    <input class='u-full-width' id='date-of-birth' type='date'>
+                    <label for='date of birth'>Street Name</label>
+                    <input class='u-full-width' id='street-name-one' type='text' 
+                    placeholder="street name...">
                 </div>
             </div>
 
             <div class='row'>
                 <div class='six columns'>
-                    <label for='Patient Name'>First Name</label>
-                    <input class='u-full-width' id='first-name' type='text'
-                    placeholder='First Name'>
+                    <label for='Street Name'>Street Name (Optional)</label>
+                    <input class='u-full-width' id='street-name-two' type='text'
+                    placeholder='street name optional'>
                 </div>
             </div>
 
             <div class='row'>
                 <div class='six columns'>
-                    <label for='Patient Middle Name'>Middle Name</label>
-                    <input class='u-full-width' id='middle-name' type='text'
-                    placeholder='Middle Name'>
+                    <label for='Suburb'>Suburb</label>
+                    <input class='u-full-width' id='suburb' type='text'
+                    placeholder='Suburb'>
                 </div>
             </div>
 
             <div class='row'>
                 <div class='six columns'>
-                    <label for='Patient Last Name'>Last Name</label>
-                    <input class='u-full-width' id='last-name' type='text'
-                    placeholder='Last Name'>
+                    <label for='State'>State</label>
+                    <input class='u-full-width' id='state' type='text'
+                    placeholder='state'>
                 </div>
             </div>
-
+<!-- 
             <div class="row">
                 <div class="six columns">
                     <label for="PatientResidencyStatus">Patient Residency Status</label>
@@ -74,9 +73,10 @@
                     </select>
                 </div>
             </div>
+-->
             <button id='submit' class='button-primary'>Submit</button>
         </div>
-        
+         
     </form>
 
 
