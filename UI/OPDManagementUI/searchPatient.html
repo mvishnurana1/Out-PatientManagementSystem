@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <title>Search Patient-OPDManagement System</title>
 </head>
 <body>
+    <div class="navBar" id="mainNavBar">
+        <a href="#home">Home</a>
+        <a href="index.html">Add patient</a>
+        <a href="personalInfo.html">Personel Info</a>
+        <a href="searchPatient.html">Search Patient</a>
+    </div>
     
+    <div class='container'>
+        <div id='page-title'>
+            <h3>Search Patient</h3>
+        </div>
+
+
+        <form id='patient-detail-form'>
+            <div class='row'>
+                <div class='six columns'>
+                    <label for='patient-id-search'>Patient ID</label>
+                    <input class='u-full-width' id='patient-id' type='number'
+                    placeholder='Patient ID'>
+                </div>
+            </div>  
+
+            <div class='row'>
+                <div class='six columns'>
+                        <label for='patient-name-search'>Patient's Name</label>
+                        <input class='u-full-width' id='patientsFirstName' type='text'
+                        placeholder='first Name'>
+                </div>
+            </div>
+            
+            <div class='row'>
+                    <div class='six columns'>
+                            <label for='patient-lastName-search'>Patient's Last Name</label>
+                            <input class='u-full-width' id='patientsLastName' type='text'
+                            placeholder='last Name'>
+                    </div>
+            </div>
+                
+            <div class='row'>
+                    <div class='six columns'>
+                        <label for='date of birth'>Date of Birth</label>
+                        <input class='u-full-width' id='date-of-birth' type='date'>
+                    </div>
+            </div>
+        
+            
+    </form>
+    </div>
 </body>
 </html>
