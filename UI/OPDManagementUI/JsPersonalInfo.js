@@ -55,7 +55,7 @@ document.getElementById('personalInfo-submit').addEventListener('click', functio
     else {
         // get details 
         console.log(houseNum, streetName1, streetName2, suburb, postcode, state); 
-        ui.showAlert('Patient Added to  the database.', 'success'); 
+        ui.showAlert('Address Added to  the Patient\'s information.', 'success'); 
 
         // reset all the UI fields 
         ui.resetUIfields(); 
