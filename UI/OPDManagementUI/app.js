@@ -8,7 +8,7 @@ UI.prototype.resetFields = function () {
     document.querySelector('#first-name').value = '';
     document.querySelector('#middle-name').value = '';
     document.querySelector('#last-name').value = '';
-    document.querySelector('#visaStatus').value = null; 
+    document.querySelector('#visa-status').value ='null'; 
 }
 
 // Show alert based on validation. 
@@ -32,7 +32,6 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000); 
 }
 
-
 // Adding event listener on submit button: 
 document.getElementById('submit').addEventListener('click', function(e){
     // get form values
@@ -45,23 +44,11 @@ document.getElementById('submit').addEventListener('click', function(e){
     if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
         ui.showAlert('Please fill in all fields', 'error'); 
     } else {
-
-        // Dynamically load Personel info page for User 
-        
-
-        // display alert 
         ui.showAlert('Patient Added to  the database.', 'success'); 
 
         // reset fields
         ui.resetFields(); 
-
-        //  display loader image on the UI
-        //  Get the container from HTML & display the loader on the page
-        let container = document.getElementsByClassName('container'); 
-        let imgLoader = document.createElement('style')
-        imgLoader.innerHTML = "div { background: url(img/loading.gif);}";  
     }
-    
     e.preventDefault(); 
 })
 
@@ -71,10 +58,10 @@ function GetUIValues() {
     const firstName = document.querySelector('#first-name').value;
     const middleName = document.querySelector('#middle-name').value;
     const lastName = document.querySelector('#last-name').value;
-    const visaStatus = document.querySelector('#visa-status').value; 
+    const visaStatus = document.querySelector('#visa-status').value;
+
     return { id, dob, firstName, middleName, lastName, visaStatus };
 }
-
 
 /**
  * NavBar JS
@@ -82,8 +69,8 @@ function GetUIValues() {
 function openDrawerMenu(){
     var x = document.getElementById("mainNavBar");
     if (x.className === "navBar"){
-      x.className += "responsive";
+      x.className += " responsive";
     } else {
       x.className = "navBar";
     }
-}
+  }
