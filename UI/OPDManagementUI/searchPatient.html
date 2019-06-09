@@ -24,7 +24,7 @@
 
         <form id='patient-detail-form'>
             <div class='row'>
-                <div class='six columns'>
+                <div>
                     <label for='patient-id-search'>Patient ID</label>
                     <input class='u-full-width' id='patient-id' type='number'
                     placeholder='Patient ID'>
@@ -32,29 +32,50 @@
             </div>  
 
             <div class='row'>
-                <div class='six columns'>
-                        <label for='patient-name-search'>Patient's Name</label>
-                        <input class='u-full-width' id='patientsFirstName' type='text'
-                        placeholder='first Name'>
+                <div>
+                    <label for='patient-name-search'>Patient's Name</label>
+                    <input class='u-full-width' id='patientsFirstName' type='text'
+                    placeholder='first Name'>
                 </div>
             </div>
             
             <div class='row'>
-                    <div class='six columns'>
-                            <label for='patient-lastName-search'>Patient's Last Name</label>
-                            <input class='u-full-width' id='patientsLastName' type='text'
-                            placeholder='last Name'>
+                    <div>
+                        <label for='Patient Middle Name'>Patient's Middle Name</label>
+                        <input class='u-full-width' id='patientsMiddleName' type='text'
+                        placeholder='Middle Name'>
                     </div>
+            </div>
+    
+
+            <div class='row'>
+                <div>
+                    <label for='patient-lastName-search'>Patient's Last Name</label>
+                    <input class='u-full-width' id='patientsLastName' type='text'
+                    placeholder='last Name'>
+                </div>
             </div>
                 
             <div class='row'>
-                    <div class='six columns'>
-                        <label for='date of birth'>Date of Birth</label>
-                        <input class='u-full-width' id='date-of-birth' type='date'>
-                    </div>
+                <div>
+                    <label for='date of birth'>Date of Birth</label>
+                    <input class='u-full-width' id='date-of-birth' type='date'>
+                </div>
             </div>
-        
-            
+
+            <div class="row">
+                <div>
+                    <label for="PatientResidencyStatus">Patient Residency Status</label>
+                        <select class="u-full-width" id="visa-status" required>
+                        <option value="null">Please choose one from drop-down menu</option>
+                        <option value="local">Local</option>
+                        <option value="international">International</option>
+                        <option value="NewZealander">Nz Citizen</option>
+                    </select>
+                </div>
+            </div>
+
+                <button id='submit' class='button-primary'>Submit</button>
     </form>
     </div>
 </body>
