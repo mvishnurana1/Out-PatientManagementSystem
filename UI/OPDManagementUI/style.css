@@ -1,11 +1,11 @@
 body{
-    background-image: url("img/doctor-OPD-management-medicine.jpg"); 
-    color: #24025E; 
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top:1%; 
+  color: #24025E; 
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top:1%; 
+/*  background-image: url("img/doctor-OPD-management-medicine.jpg"); */
 }
 
 #page-title{

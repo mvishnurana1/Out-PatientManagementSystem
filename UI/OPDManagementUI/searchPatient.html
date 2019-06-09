@@ -21,7 +21,6 @@
             <h3>Search Patient</h3>
         </div>
 
-
         <form id='patient-detail-form'>
             <div class='row'>
                 <div>
@@ -75,7 +74,26 @@
                 </div>
             </div>
 
-                <button id='submit' class='button-primary'>Submit</button>
+            <div class='row'> 
+                <button id='submit' class='u-full-width'>Submit</button>
+            </div>
+                
+            <hr>
+
+            <table class='u-full-width'>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Date Of Birth</th>
+                            <th>Residency Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id='patient-detail-list'></tbody>
+            </table>
+
     </form>
     </div>
 </body>
