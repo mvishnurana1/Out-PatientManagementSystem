@@ -11,7 +11,6 @@ namespace OPDManagementSystem.Models
         public Address() : this(0, "", "", 0)
         { }
 
-
         /// <summary>
         /// constructor over-load-1
         /// </summary>

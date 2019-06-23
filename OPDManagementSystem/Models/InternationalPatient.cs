@@ -26,7 +26,7 @@
             ret.FirstName = this.FirstName;
             ret.LastName = this.LastName;
             ret.DateOfBirth = this.DateOfBirth;
-            ret.GetPatientAddress = this.GetPatientAddress;
+            ret.GetAddress = this.GetAddress;
 
             return ret;
         }

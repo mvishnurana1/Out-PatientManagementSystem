@@ -20,7 +20,6 @@ namespace OPDManagementSystem.Models
             Chronic = chronic; 
         }
 
-
         public String MedicalIssue { get; set; }
         public Boolean Chronic { get; set; }
     }

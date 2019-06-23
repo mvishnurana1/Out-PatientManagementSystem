@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OPDManagementSystem.Models
 {
-    public abstract class Patient
+    public abstract class Patient : Person
     {
         public Patient(){}
 
@@ -27,16 +27,15 @@ namespace OPDManagementSystem.Models
             FirstName = fName;
             LastName = lName;
             DateOfBirth = dob;
-            GetPatientAddress = address; 
+            GetAddress = address; 
         }
 
         public long PatientID { get; set; }
         //todo: protected set
         //protected long PatientID { set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public Address GetPatientAddress { get; set; }
+        
+        public String BloodGroup { get; set; }
+        
         public PatientHistory GetHistory { get; set; }
 
         public abstract Patient Clone();
@@ -44,7 +43,7 @@ namespace OPDManagementSystem.Models
         public string PatientToString()
         {
             return this.PatientID + " " + this.FirstName + " " + this.LastName + " " + this.DateOfBirth 
-                +" "+this.GetPatientAddress.AddressToString();
+                +" "+this.GetAddress.AddressToString();
         }
     }
 }
