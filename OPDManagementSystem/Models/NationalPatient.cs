@@ -2,15 +2,12 @@
 {
     public class NationalPatient : Patient
     {
-        public NationalPatient()
-        {}
+        public NationalPatient(){}
 
-        public NationalPatient(long id) : base(id) 
-        {}
+        public NationalPatient(long id) : base(id){}
 
         public NationalPatient(long ID, string firstName, string lastName)
-            : base(ID, firstName, lastName)
-        {}
+            : base(ID, firstName, lastName){}
 
         public NationalPatient(long ID, string firstName, string lastName, 
             string medicareDetail) : base(ID, firstName, lastName)
@@ -39,5 +36,4 @@
 
         public string MedicareInfo { get; set; }
     }
-
 }

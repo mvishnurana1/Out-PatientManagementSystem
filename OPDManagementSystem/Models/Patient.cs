@@ -42,8 +42,8 @@ namespace OPDManagementSystem.Models
 
         public string PatientToString()
         {
-            return this.PatientID + " " + this.FirstName + " " + this.LastName + " " + this.DateOfBirth 
-                +" "+this.GetAddress.AddressToString();
+            return this.PatientID + " " + this.FirstName + " " + this.LastName + " " + this.DateOfBirth+" "
+                +this.BloodGroup+" "+this.GetAddress.AddressToString();
         }
     }
 }

@@ -28,7 +28,6 @@ namespace OPDManagementSystem
             }
         }
 
-
         /// <summary>
         /// The function checks if a patient is already 
         /// present in the list and returns true/false. 
@@ -46,7 +45,6 @@ namespace OPDManagementSystem
                 return false; 
             }
         }
-
 
         /// <summary>
         /// The method removes a patient from the list 
