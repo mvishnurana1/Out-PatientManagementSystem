@@ -44,9 +44,11 @@
   <ItemGroup>
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Disease.cs" />
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\InternationalPatient.cs" />
     <Compile Include="Models\NationalPatient.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="PatientHistory.cs" />
     <Compile Include="PatientManagement.cs" />
     <Compile Include="Program.cs" />

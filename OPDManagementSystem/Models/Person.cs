@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace OPDManagementSystem.Models
 {
     public class Person
@@ -8,5 +7,6 @@ namespace OPDManagementSystem.Models
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Address GetAddress { get; set; }
+        public String Gender { get; set; }
     }
 }

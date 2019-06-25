@@ -18,7 +18,8 @@ namespace OPDManagementSystem.Models
         /// <param name="streetName"></param>
         /// <param name="suburb"></param>
         /// <param name="postcode"></param>
-        public Address(int hNumber, string streetName, string suburb, int postcode)
+        public Address(int hNumber, string streetName, 
+            string suburb, int postcode)
         {
             HouseNumber = hNumber;
             StreetName1 = streetName;
@@ -34,7 +35,8 @@ namespace OPDManagementSystem.Models
         /// <param name="streetName2"></param>
         /// <param name="suburb"></param>
         /// <param name="postcode"></param>
-        public Address(int hNumber, string streetName, string streetName2, string suburb, int postcode)
+        public Address(int hNumber, string streetName, 
+            string streetName2, string suburb, int postcode)
         {
             HouseNumber = hNumber;
             StreetName1 = streetName;
@@ -76,11 +78,13 @@ namespace OPDManagementSystem.Models
         {
             if (String.IsNullOrEmpty(StreetName2))
             {
-                return HouseNumber + ", " + StreetName1 + ", " + Suburb + ", " + PostCode;
+                return HouseNumber + ", " + StreetName1 + 
+                    ", " + Suburb + ", " + PostCode;
             }
             else
             {
-                return HouseNumber + ", " + StreetName1 + ", " + StreetName2 + Suburb + ", " + PostCode;
+                return HouseNumber + ", " + StreetName1 + 
+                    ", " + StreetName2+ ", " + Suburb + ", " + PostCode;
             }
         }
     }
