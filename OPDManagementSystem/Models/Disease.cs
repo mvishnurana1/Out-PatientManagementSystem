@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Runtime.Serialization; 
 
 namespace OPDManagementSystem.Models
 {
+    [DataContract]
     public class Disease
     {
         /// <summary>
@@ -20,7 +22,10 @@ namespace OPDManagementSystem.Models
             Chronic = chronic; 
         }
 
+        [DataMember]
         public String MedicalIssue { get; set; }
+
+        [DataMember]
         public Boolean Chronic { get; set; }
     }
 }

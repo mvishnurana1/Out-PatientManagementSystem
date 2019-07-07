@@ -1,5 +1,8 @@
-﻿namespace OPDManagementSystem.Models
+﻿using System.Runtime.Serialization; 
+
+namespace OPDManagementSystem.Models
 {
+    [DataContract]
     public class InternationalPatient : Patient
     {
         public InternationalPatient()
@@ -31,6 +34,7 @@
             return ret;
         }
 
+        [DataMember]
         public string InsuraceDetail { get; set; }
     }
 }

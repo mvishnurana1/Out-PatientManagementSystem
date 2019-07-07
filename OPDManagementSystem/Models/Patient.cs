@@ -2,9 +2,12 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization; 
+
 
 namespace OPDManagementSystem.Models
 {
+    [DataContract]
     public abstract class Patient : Person
     {
         public Patient(){}
@@ -30,14 +33,17 @@ namespace OPDManagementSystem.Models
             GetAddress = address; 
         }
 
+        [DataMember]
         public long PatientID { get; set; }
         //todo: protected set
         //protected long PatientID { set; }
-        
+
+        [DataMember]
         public String BloodGroup { get; set; }
-        
+
         public PatientHistory GetHistory { get; set; }
 
+        
         public abstract Patient Clone();
 
         public string PatientToString()

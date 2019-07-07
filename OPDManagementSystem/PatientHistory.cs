@@ -20,7 +20,6 @@ namespace OPDManagementSystem.Models
             var key = Tuple.Create(patient, time); 
             contactInstance.Add(key, disease);
         }
-
         /// <summary>
         /// removes the patient transaction takes
         /// the key as an argument. 

@@ -1,7 +1,11 @@
-﻿namespace OPDManagementSystem.Models
+﻿using System.Runtime.Serialization; 
+
+namespace OPDManagementSystem.Models
 {
+    [DataContract]
     public class Doctor : Person
     {
+        [DataMember]
         public int DoctorID { get; set; }
 
         public string PatientToString()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization; 
 
 namespace OPDManagementSystem.Models
 {
@@ -48,26 +49,31 @@ namespace OPDManagementSystem.Models
         /// <summary>
         /// Address model of the patient House number. 
         /// </summary>
+        [DataMember]
         public int HouseNumber { get; set; }
 
         /// <summary>
         /// Address model of the patient Street1 
         /// </summary>
+        [DataMember]
         public string StreetName1 { get; set; }
 
         /// <summary>
         /// Optional address field of the address model
         /// </summary>
+        [DataMember]
         public string StreetName2 { get; set; }
 
         /// <summary>
         /// Suburb field of the address 
         /// </summary>
+        [DataMember]
         public string Suburb { get; set;}
 
         /// <summary>
         /// post-code field of the address. 
         /// </summary>
+        [DataMember]
         public int PostCode { get; set; }
 
         /// <summary>
