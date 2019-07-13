@@ -10,18 +10,16 @@ namespace OPDSys.Controllers
 {
     public class OPDController : ApiController
     {
-        public IHttpActionResult GetPatient()
+        public IList<InternationalPatient> GetPatient()
         {
             var pat = new InternationalPatient(12, "Morgan", "Smolder");
-            return Ok(pat);
+            return new List<InternationalPatient>() { pat };
         }
 
-        public IHttpActionResult GetPatient(int id)
-        {
-            var pat = new InternationalPatient(12, "Morgan", "Smolder");
-            return Ok(pat);
-        }
+        //public IHttpActionResult GetPatient(int id)
+        //{
+        //    var pat = new InternationalPatient(12, "Morgan", "Smolder");
+        //    return Ok(pat);
+        //}
     }
-
-    
 }
