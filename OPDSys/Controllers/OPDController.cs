@@ -22,4 +22,9 @@ namespace OPDSys.Controllers
         //    return Ok(pat);
         //}
     }
+
+    public class UIOPDController : ApiController
+    {
+
+    }
 }
