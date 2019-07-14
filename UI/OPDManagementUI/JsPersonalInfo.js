@@ -43,7 +43,7 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000); 
 }
 
-document.getElementById('personalInfo-submit').addEventListener('click', function(e){
+document.getElementById('continue').addEventListener('click', function(e){
     const ui = new UI(); 
 
     const {houseNum, streetName1, streetName2, suburb, postcode, state} = ui.getUIValues(); 

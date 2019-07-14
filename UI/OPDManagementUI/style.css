@@ -36,6 +36,18 @@ button{
     background: red; 
 }
 
+.loader_div{
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  left: 0;
+  right: 0%;
+  z-index: 99;
+  opacity:0.7;
+  display:none;
+  background: lightgrey url('img/opd-loader.gif') center center no-repeat;
+}
+
 /*
 * Navbar css code 
 */
