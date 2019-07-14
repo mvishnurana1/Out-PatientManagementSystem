@@ -5,13 +5,17 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   margin-top:1%; 
-/*  background-image: url("img/doctor-OPD-management-medicine.jpg"); */
 }
 
 #page-title{
     text-align: center;
     text-decoration: underline;
     margin:1%;  
+}
+
+button{
+  background-color:#009CDE; 
+  color: white; 
 }
 
 #submit{

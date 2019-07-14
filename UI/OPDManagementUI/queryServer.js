@@ -8,8 +8,6 @@ function getPatient(id, callback, errorCallback){
 }
 
 document.getElementById("submit").addEventListener("click", searchPatient);
-console.log(document.getElementById("submit"))
-console.log("bound")
 
 function searchPatient(e){
     e.preventDefault();
@@ -22,15 +20,18 @@ function searchPatient(e){
         let outputTable = $('#patient-detail-list'); 
         outputTable.empty(); 
          
-        patients.forEach(patient => {
-        
-            outputTable.append(`<tr><td>${patient.PatientID}</td>
-            <td>${patient.FirstName}</td>
-            <td>${patient.LastName}</td>
-            <td>${patient.DateOfBirth}</td>
-            <td>${patient.Gender}</td></tr>`)
+        patients.forEach(patient => 
+        {
+            outputTable.append(
+            `<tr>
+                <td>${patient.PatientID}</td>
+                <td>${patient.FirstName}</td>
+                <td>${patient.LastName}</td>
+                <td>${patient.DateOfBirth}</td>
+                <td>${patient.Gender}</td>
+            </tr>`
+            )
         });
-        
     },
     e=>{
         console.log(e); 

@@ -36,7 +36,6 @@ UI.prototype.showAlert = function (message, className) {
 document.getElementById('submit').addEventListener('click', function(e){
     // get form values
     const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
-    
     console.log(id, dob, firstName, middleName, lastName, visaStatus); 
     
     const ui = new UI(); 
@@ -46,6 +45,7 @@ document.getElementById('submit').addEventListener('click', function(e){
     } else {
         ui.showAlert('Patient Added to  the database.', 'success'); 
 
+        window.location.href = "personalInfo.html"; 
         // reset fields
         ui.resetFields(); 
     }
