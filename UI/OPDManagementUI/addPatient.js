@@ -35,10 +35,18 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000); 
 }
 
+function animationToNextPage() {
+    document.getElementsByTagName('body')[0].style.visibility = 'hidden'; 
+    document.getElementsByTagName('body')[0].className = 'loader_div';
+
+    window.setTimeout(function() {
+        window.location.href = "add-patient-info.html";
+    }, 2000); 
+}
+
 document.getElementById('continue').addEventListener('click', eventHandler); 
 
 function eventHandler(e) {
-    e.preventDefault(); 
 
     const ui = new UI(); 
     // get form values
@@ -46,14 +54,12 @@ function eventHandler(e) {
     console.log(id, dob, firstName, middleName, lastName, visaStatus); 
     
     if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
+
         ui.showAlert('Please fill in all fields', 'error'); 
+
     } else {
-
-        document.getElementsByTagName('body')[0].className = 'loader_div'; 
-
-        //ui.showAlert('Patient Added to  the database.', 'success'); 
-        window.location.href = "add-patient-info.html"; 
-        // reset fields
-        //ui.resetFields(); 
+        // Timeout after 5 seconds 
+        animationToNextPage(); 
+        e.preventDefault(); 
     }
 }
