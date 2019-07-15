@@ -35,8 +35,6 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000); 
 }
 
-
-
 document.getElementById('continue').addEventListener('click', eventHandler); 
 
 function eventHandler(e) {
@@ -50,13 +48,12 @@ function eventHandler(e) {
     if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
         ui.showAlert('Please fill in all fields', 'error'); 
     } else {
-        $(".loader_div").show(); 
-        ui.showAlert('Patient Added to  the database.', 'success'); 
-        
 
-        //window.location.href = "add-patient-info.html"; 
+        document.getElementsByTagName('body')[0].className = 'loader_div'; 
+
+        //ui.showAlert('Patient Added to  the database.', 'success'); 
+        window.location.href = "add-patient-info.html"; 
         // reset fields
         //ui.resetFields(); 
     }
-
 }
