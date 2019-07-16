@@ -1,3 +1,6 @@
+import { exportValues } from './addPatient';
+
+
 function UI () {}
 
 // get all UI values
@@ -9,17 +12,13 @@ UI.prototype.getUIValues = function()
           suburb = document.querySelector('#suburb').value, 
           postcode = document.querySelector('#postcode').value,   
           state = document.querySelector('#state').value; 
-          
-          return {houseNum, streetName1, streetName2, suburb, postcode, state}; 
-}
 
-UI.prototype.resetUIfields = function() {
-    document.querySelector('#house-number').value = '', 
-    document.querySelector('#street-name-one').value = '', 
-    document.querySelector('#street-name-two').value = '', 
-    document.querySelector('#suburb').value = '', 
-    document.querySelector('#postcode').value = '',   
-    document.querySelector('#state').value = ''; 
+    const { id, dob, firstName, middleName, lastName, visaStatus } = exportValues(); 
+
+          return {
+                    id, dob, firstName, middleName, lastName, visaStatus,
+                    houseNum, streetName1, streetName2, suburb, postcode, state
+                 }; 
 }
 
 // Show alert based on validation. 
@@ -54,11 +53,10 @@ document.getElementById('continue').addEventListener('click', function(e){
     }
     else {
         // get details 
-        console.log(houseNum, streetName1, streetName2, suburb, postcode, state); 
+        console.log(id, dob, firstName, middleName, lastName, visaStatus,
+            houseNum, streetName1, streetName2, suburb, postcode, state); 
+        //console.log(houseNum, streetName1, streetName2, suburb, postcode, state); 
         ui.showAlert('Address Added to  the Patient\'s information.', 'success'); 
-
-        // reset all the UI fields 
-        ui.resetUIfields(); 
     }
     e.preventDefault(); 
 }); 

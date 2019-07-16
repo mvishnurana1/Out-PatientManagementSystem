@@ -1,4 +1,3 @@
-
 function UI() {}
 
 // get all UI values
@@ -12,7 +11,6 @@ function GetUIValues() {
 
     return { id, dob, firstName, middleName, lastName, visaStatus };
 }
-
 
 // Show alert based on validation. 
 UI.prototype.showAlert = function (message, className) {
@@ -52,8 +50,6 @@ function animationToLoadNextPage() {
 document.getElementById('continue').addEventListener('click', eventHandler); 
 
 function eventHandler(e) {
-    e.preventDefault();
-
     const ui = new UI(); 
     
     // get form values
@@ -63,30 +59,27 @@ function eventHandler(e) {
     
     if (id === '' || dob === '' || firstName === '' || 
             lastName === '' || visaStatus === 'null') {
-
         ui.showAlert('Please fill in all fields', 'error'); 
 
     } else {
+
+        let newId = id,
+              newDob = dob, 
+              first_Name = firstName, 
+              middle_Name = middleName, 
+              last_Name = lastName, 
+              visa_Status = visaStatus; 
+
+        exportValues(newId, newDob, first_Name, middle_Name, last_Name, visa_Status); 
         animationToLoadNextPage(); 
-
-        document.getElementById('submit').addEventListener('click', submitFinalDetails); 
     }
+    e.preventDefault();
 }
 
-/// Add personal-details
-UI.prototype.getPatientsValues = function() {
+export default function exportValues(id, dob, firstName, middleName, lastName, visaStatus) {
+    console.log('printing export values: '+  id, dob, firstName, middleName, lastName, visaStatus ); 
 
-    const houseNum = document.querySelector('#house-number').value, 
-          streetName1 = document.querySelector('#street-name-one').value, 
-          streetName2 = document.querySelector('#street-name-two').value, 
-          suburb = document.querySelector('#suburb').value, 
-          postcode = document.querySelector('#postcode').value,   
-          state = document.querySelector('#state').value; 
-          
-          return {houseNum, streetName1, streetName2, suburb, postcode, state}; 
+    return { id, dob, firstName, middleName, lastName, visaStatus }; 
 }
 
-function submitFinalDetails(e) {
-    console.log('clicked!'); 
-    e.preventDefault(); 
-}
+export { exportValues }; 
