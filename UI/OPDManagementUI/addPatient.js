@@ -35,31 +35,58 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000); 
 }
 
-function animationToNextPage() {
+/**
+ * The function hides the HTML form
+ * Displays the animation
+ * loads the next page after 2 second delay
+ */ 
+function animationToLoadNextPage() {
     document.getElementsByTagName('body')[0].style.visibility = 'hidden'; 
     document.getElementsByTagName('body')[0].className = 'loader_div';
 
     window.setTimeout(function() {
         window.location.href = "add-patient-info.html";
-    }, 2000); 
+    }, 1000); 
 }
 
 document.getElementById('continue').addEventListener('click', eventHandler); 
 
 function eventHandler(e) {
+    e.preventDefault();
 
     const ui = new UI(); 
+    
     // get form values
     const { id, dob, firstName, middleName, lastName, visaStatus } = GetUIValues();  
+    
     console.log(id, dob, firstName, middleName, lastName, visaStatus); 
     
-    if (id === '' || dob === '' || firstName === '' || lastName === '' || visaStatus === 'null') {
+    if (id === '' || dob === '' || firstName === '' || 
+            lastName === '' || visaStatus === 'null') {
 
         ui.showAlert('Please fill in all fields', 'error'); 
 
     } else {
-        // Timeout after 5 seconds 
-        animationToNextPage(); 
-        e.preventDefault(); 
+        animationToLoadNextPage(); 
+
+        document.getElementById('submit').addEventListener('click', submitFinalDetails); 
     }
+}
+
+/// Add personal-details
+UI.prototype.getPatientsValues = function() {
+
+    const houseNum = document.querySelector('#house-number').value, 
+          streetName1 = document.querySelector('#street-name-one').value, 
+          streetName2 = document.querySelector('#street-name-two').value, 
+          suburb = document.querySelector('#suburb').value, 
+          postcode = document.querySelector('#postcode').value,   
+          state = document.querySelector('#state').value; 
+          
+          return {houseNum, streetName1, streetName2, suburb, postcode, state}; 
+}
+
+function submitFinalDetails(e) {
+    console.log('clicked!'); 
+    e.preventDefault(); 
 }

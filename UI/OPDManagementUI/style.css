@@ -37,7 +37,7 @@ button{
 }
 
 .loader_div{
-  background: lightgrey url('img/opd-loader.gif') center center no-repeat;
+  background: black url('img/new-loader.gif') center center no-repeat;
   position: relative;
   width: 100%; 
   height: 100%;
