@@ -12,7 +12,7 @@ document.getElementById("submit").addEventListener("click", searchPatient);
 function searchPatient(e){
     e.preventDefault();
     let id = document.getElementById("patient-id").value;
-    console.log("Triggered")
+    console.log("Triggered");
     
      getPatient(id, patients=>{
         console.log(JSON.stringify(patients));

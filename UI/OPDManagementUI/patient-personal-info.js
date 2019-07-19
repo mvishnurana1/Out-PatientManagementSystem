@@ -1,4 +1,4 @@
-import { exportValues } from './addPatient';
+import { exportValues } from 'addPatient';
 
 
 function UI () {}
@@ -6,14 +6,14 @@ function UI () {}
 // get all UI values
 UI.prototype.getUIValues = function()
 {
+    const { id, dob, firstName, middleName, lastName, visaStatus } = exportValues(); 
+
     const houseNum = document.querySelector('#house-number').value, 
           streetName1 = document.querySelector('#street-name-one').value, 
           streetName2 = document.querySelector('#street-name-two').value, 
           suburb = document.querySelector('#suburb').value, 
           postcode = document.querySelector('#postcode').value,   
           state = document.querySelector('#state').value; 
-
-    const { id, dob, firstName, middleName, lastName, visaStatus } = exportValues(); 
 
           return {
                     id, dob, firstName, middleName, lastName, visaStatus,

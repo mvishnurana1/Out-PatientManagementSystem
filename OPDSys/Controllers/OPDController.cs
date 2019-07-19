@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using OPDManagementSystem.Models; 
+using OPDManagementSystem.Models;
 
 namespace OPDSys.Controllers
 {
@@ -21,10 +21,5 @@ namespace OPDSys.Controllers
         //    var pat = new InternationalPatient(12, "Morgan", "Smolder");
         //    return Ok(pat);
         //}
-    }
-
-    public class UIOPDController : ApiController
-    {
-
     }
 }
